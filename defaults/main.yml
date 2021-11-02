@@ -1,0 +1,4 @@
+openssl_hostname: "{{ hostname | default(inventory_hostname) }}"
+openssl_private_key_path: "/etc/ssl/private/{{ openssl_hostname }}.pem"
+openssl_csr_path: "/etc/ssl/private/{{ openssl_hostname }}.csr"
+openssl_certificate_path: "/etc/ssl/certs/{{ openssl_hostname }}.crt"
