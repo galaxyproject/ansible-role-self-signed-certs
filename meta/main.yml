@@ -1,5 +1,6 @@
 ---
 galaxy_info:
+  role_name: self-signed-certs
   author: The Galaxy Project
   description: Create some self-signed certificates
   company: The Galaxy Project
