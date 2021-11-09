@@ -12,7 +12,7 @@ This is designed to work with `galaxyproject.nginx` to generate self-signed cert
     nginx_ssl_servers:
       - vhost1_ssl
       - vhost2_ssl
-    nginx_ssl_role: galaxyproject.self-signed-certs
+    nginx_ssl_role: galaxyproject.self_signed_certs
     openssl_domains:
       - vhost1.example.org
       - vhost2.example.org
