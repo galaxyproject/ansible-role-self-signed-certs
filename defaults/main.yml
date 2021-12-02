@@ -1,3 +1,8 @@
+openssl_domains: "{{ inventory_hostname | default(omit) }}"
 openssl_private_key_path: "/etc/ssl/private/{{ openssl_domains[0] }}.pem"
 openssl_csr_path: "/etc/ssl/private/{{ openssl_domains[0] }}.csr"
 openssl_certificate_path: "/etc/ssl/certs/{{ openssl_domains[0] }}.crt"
+
+# By default sign it ourselves, but, leave open the option to not do that.
+# Or if you got them oficially signed, turn self-sign off, and put them in files/certificates/{{ openssl_domains[0] }}.cer
+openssl_self_sign: true

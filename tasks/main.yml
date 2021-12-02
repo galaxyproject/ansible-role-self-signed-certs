@@ -21,3 +21,13 @@
     privatekey_path: "{{ openssl_private_key_path }}"
     csr_path: "{{ openssl_csr_path }}"
     provider: selfsigned
+  when: openssl_self_sign
+
+- name: Deploy an officially signed cert
+  copy:
+    src: "files/certificates/{{ openssl_domains[0] }}.cer"
+    dest: "{{ openssl_certificate_path }}"
+    owner: root
+    group: root
+    mode: '0644'
+  when: openssl_self_sign == false
